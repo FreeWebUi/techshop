@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+body {
+  @apply bg-white text-gray-800 font-sans;
+}
+
+.btn {
+  @apply bg-gray-100 text-gray-800 px-6 py-2 rounded-md border hover:bg-gray-50;
+}
+
+.btn.primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700;
+}
+
+.input {
+  @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+.card {
+  @apply p-6 rounded-lg shadow-md border border-gray-100;
+}
+
+.link {
+  @apply text-blue-600;
+}
+.dataTable {
+  @apply w-full border border-gray-100;
+}
+.dataTable th {
+  @apply bg-neutral-200 border border-gray-300;
+}
+.dataTable td {
+  @apply border border-gray-300;
+}
+
+.container-fluid {
+  @apply px-16 mx-auto;
+}
+
+h1 {
+  @apply text-4xl font-bold text-gray-900;
+}
+h2 {
+  @apply text-3xl font-semibold text-gray-800;
+}
+
+h3 {
+  @apply text-2xl font-semibold text-gray-800;
+}
+
+h4 {
+  @apply text-xl font-medium text-gray-700;
+}
+
+p {
+  @apply text-base text-gray-600 leading-relaxed;
+}
+
+small {
+  @apply text-sm text-gray-500;
+}
+
+.list {
+  @apply list-disc list-inside text-gray-700 space-y-1;
+}
+
+.blink {
+  animation: blink-animation 1s steps(2, start) infinite;
+  color: rgb(255, 149, 0); /* Optional styling */
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
