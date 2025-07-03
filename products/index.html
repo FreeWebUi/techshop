@@ -45,10 +45,10 @@
     </div>
 
     <div class="topNav bg-neutral-100 py-2 sticky">
-      <div class="container mx-auto px-4 text-center">
+      <div class="container px-4 mx-auto text-center">
         <p>
           Get up to 12 months of No Cost EMI on selected products with eligible
-          cards. <a class="link" href="/src/products/">Shop</a>
+          cards. <a class="link" href="/products/">Shop</a>
         </p>
       </div>
     </div>
@@ -60,7 +60,7 @@
           <!-- Left: Branding -->
           <div class="flex flex-col md:flex-row items-center gap-4">
             <div class="text-2xl font-bold text-black">
-              <a href="/src" class="hover:text-gray-600">
+              <a href="/" class="hover:text-gray-600">
                 <i class="fa-solid fa-microchip text-blue-600"></i> TechShop
               </a>
             </div>
@@ -71,19 +71,17 @@
             class="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto"
           >
             <nav class="hidden md:flex space-x-6">
-              <!-- <a href="/src" class="hover:text-gray-600 font-semibold"
-                >Home</a
-              > -->
               <a
-                href="/src/products"
+                href="?category=all"
                 class="hover:text-gray-600 font-semibold"
                 >All Product</a
               >
-              <a href="#" class="hover:text-gray-600 font-semibold"
+              <a href="?category=smartphones" class="hover:text-gray-600 font-semibold"
                 >Smartphones</a
               >
-              <a href="#" class="hover:text-gray-600 font-semibold">Laptops</a>
-              <a href="#" class="hover:text-gray-600 font-semibold">Tablets</a>
+              <a href="?category=laptops" class="hover:text-gray-600 font-semibold">Laptops</a>
+              <a href="?category=tablets" class="hover:text-gray-600 font-semibold">Tablets</a>
+              <a href="?category=mobile-accessories" class="hover:text-gray-600 font-semibold">Accessories</a>
             </nav>
           </div>
 
@@ -99,7 +97,7 @@
             </button>
 
             <!-- 🛒 Cart -->
-            <a href="/src/cart" class="hover:text-gray-600">
+            <a href="/cart" class="hover:text-gray-600">
               <i class="fa-solid fa-cart-shopping"></i>
               <span id="cartQty" class="font-semibold">0</span>
             </a>
@@ -125,44 +123,26 @@
       </div>
     </header>
 
-    <div class="container mx-auto px-4 py-16 min-h-screen">
-      <div class="cartBox flex gap-8">
-        <table class="dataTable mb-8" cellspacing="0" cellpadding="10">
-          <thead>
-            <tr>
-              <th width="80">#</th>
-              <th>Product</th>
-              <th width="160">Quantity</th>
-              <th width="200">Unit Price</th>
-              <th width="200">Sub Total</th>
-            </tr>
-          </thead>
-          <tbody id="cartBody"></tbody>
-          <tfoot>
-            <tr>
-              <td colspan="4" style="text-align: right">
-                <strong>Grand Total:</strong>
-              </td>
-              <td colspan="1" class="text-center">
-                <strong id="totalPrice">$10.00</strong>
-              </td>
-            </tr>
-          </tfoot>
-        </table>
+    <div class="container mx-auto px-4 py-16">
+      
+      <div class="flex items-center justify-between mb-8">
+        <!-- <h2 class="h2">Our Products</h2> -->
+
+        <!-- Filter Option -->
+
       </div>
-      <div class="text-right">
-        <a class="btn primary !py-4" href="/src/checkout/"
-          >Proceed to Checkout</a
-        >
-      </div>
+      <div id="viewProducts" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"></div>
     </div>
+
 
     <!-- Footer -->
     <footer class="bg-gray-200 py-6 text-center text-gray-600">
-      &copy; 2025 TechShop. All rights reserved.
+      &copy; 2025 Nike. All rights reserved.
     </footer>
+    <!-- Scripts -->
 
-    <script type="module" src="cart.js"></script>
     <script type="module" src="../common/common.js"></script>
+    <script type="module" src="products.js"></script>
+    
   </body>
 </html>

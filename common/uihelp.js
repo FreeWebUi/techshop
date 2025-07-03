@@ -58,7 +58,7 @@ export function setupSearchFunctionality() {
     searchResults.innerHTML = results.length
       ? results.map(p => `
         <div class="border rounded p-2 hover:shadow">
-          <a href="/src/product/?id=${p.id}" class="flex flex-col items-center">
+          <a href="/product/?id=${p.id}" class="flex flex-col items-center">
             <img src="${p.thumbnail}" class="w-24 h-24 object-cover rounded mb-2" />
             <h5 class="font-semibold">${p.title}</h5>
             <p class="text-sm text-gray-600">₹${p.price}</p>

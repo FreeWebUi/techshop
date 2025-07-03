@@ -49,7 +49,7 @@ onSubmit.addEventListener("click", (e) => {
   heading.classList = "text-3xl font-bold text-green-700 my-6";
 
   const link = document.createElement("a");
-  link.href = "/src";
+  link.href = "/";
   link.textContent = "Back to Home";
   link.classList = "btn primary mt-4";
 

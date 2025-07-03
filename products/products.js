@@ -31,7 +31,7 @@ function renderProducts(products) {
     const div = document.createElement("div");
     div.className = 'bg-white p-4 rounded-lg shadow hover:shadow-lg transition text-center';
     div.innerHTML = `
-      <a href="/src/product/?id=${product.id}" class="flex justify-center rounded bg-neutral-50 p-4 mb-4">
+      <a href="/product/?id=${product.id}" class="flex justify-center rounded bg-neutral-50 p-4 mb-4">
         <img src="${img}" />
       </a>
       <h5>${product.title}</h5> 
