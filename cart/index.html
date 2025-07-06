@@ -4,14 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TechShop Landing Page</title>
-    <link rel="stylesheet" href="../../dist/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="../dist/output.css" />
   </head>
   <body>
-    <!-- 🔍 Search Modal -->
+    <!-- Search Modal -->
     <div
       id="searchModal"
       class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
@@ -24,7 +30,7 @@
             <h3 class="text-xl font-semibold">Search Products</h3>
             <button
               id="closeSearchBtn"
-              class=" text-gray-500 hover:text-red-500"
+              class="text-gray-500 hover:text-red-500"
             >
               <i class="fa-solid fa-xmark text-2xl"></i>
             </button>
@@ -36,7 +42,7 @@
             class="w-full border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
-        
+
         <div
           id="searchResults"
           class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 overflow-y-auto flex-1"
@@ -44,64 +50,79 @@
       </div>
     </div>
 
-    <div class="topNav bg-neutral-100 py-2 sticky">
+    <div class="topNav bg-background-dark py-2">
       <div class="container mx-auto px-4 text-center">
-        <p>
+        <p class="text-white">
           Get up to 12 months of No Cost EMI on selected products with eligible
-          cards. <a class="link" href="/products/">Shop</a>
+          cards. <a class="text-white underline" href="/products/">Shop</a>
         </p>
       </div>
     </div>
     <header class="bg-white shadow-md">
       <div class="container mx-auto px-4">
         <nav
-          class="flex flex-col md:flex-row justify-between items-center gap-4 py-4"
+          class="flex flex-col md:flex-row justify-between items-center gap-6 py-6"
         >
-          <!-- Left: Branding -->
-          <div class="flex flex-col md:flex-row items-center gap-4">
-            <div class="text-2xl font-bold text-black">
-              <a href="/" class="hover:text-gray-600">
-                <i class="fa-solid fa-microchip text-blue-600"></i> TechShop
+          <div class="flex flex-col md:flex-row items-center">
+            <div class="text-black">
+              <a href="/" class="flex" title="ZapLet">
+                <!-- <i class="fa-solid fa-microchip text-blue-600"></i>  -->
+                <span class="text-[32px] leading-10 font-semibold font-oxanium"
+                  >Zap<span class="text-primary">Let</span></span
+                >
+                <!-- <img src="assets/img/logo.png" alt="ZapLet" /> -->
               </a>
             </div>
           </div>
 
-          <!-- Center: Navigation + Search -->
           <div
-            class="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto"
+            class="flex flex-col md:flex-row items-center gap-8 w-full md:w-auto"
           >
-            <nav class="hidden md:flex space-x-6">
-              <!-- <a href="/" class="hover:text-gray-600 font-semibold"
-                >Home</a
-              > -->
+            <nav class="hidden md:flex space-x-6 uppercase">
               <a
-                href="/products"
-                class="hover:text-gray-600 font-semibold"
+                href="/products/?category=all"
+                class="hover:text-primary font-medium"
                 >All Product</a
               >
-              <a href="#" class="hover:text-gray-600 font-semibold"
-                >Smartphones</a
+              <a
+                href="/products/?category=smartphones"
+                class="hover:text-primary font-medium"
+                >Mobiles</a
               >
-              <a href="#" class="hover:text-gray-600 font-semibold">Laptops</a>
-              <a href="#" class="hover:text-gray-600 font-semibold">Tablets</a>
+              <a
+                href="/products/?category=laptops"
+                class="hover:text-primary font-medium"
+                >Laptops</a
+              >
+              <a
+                href="/products/?category=tablets"
+                class="hover:text-primary font-medium"
+                >Tablets</a
+              >
+              <a
+                href="/products/?category=mobile-accessories"
+                class="hover:text-primary font-medium"
+                >Accessories</a
+              >
             </nav>
           </div>
 
-          <!-- Right: Search + Cart + Mobile Menu Button -->
-          <div class="flex items-center gap-4 w-full md:w-auto">
-            <!-- 🔍 Search Bar -->
+          <div class="flex items-center gap-6 w-full md:w-auto">
             <button
               id="openSearchBtn"
-              class="text-gray-700 hover:text-blue-600 transition text-xl"
+              class="text-black hover:text-primary transition"
               aria-label="Open search"
             >
-              <i class="fa-solid fa-magnifying-glass"></i>
+              <i class="fa-solid fa-magnifying-glass text-2xl"></i>
             </button>
 
-            <!-- 🛒 Cart -->
-            <a href="/cart" class="hover:text-gray-600">
-              <i class="fa-solid fa-cart-shopping"></i>
-              <span id="cartQty" class="font-semibold">0</span>
+            <a href="/cart" class="hover:text-primary relative inline-block">
+              <i class="fa-solid fa-cart-shopping text-2xl"></i>
+              <span
+                id="cartQty"
+                class="font-medium absolute w-6 text-xs text-white left-1 top-1 z-10 text-center"
+                >0</span
+              >
             </a>
 
             <!-- 🍔 Hamburger (Mobile only) -->
@@ -125,7 +146,10 @@
       </div>
     </header>
 
-    <div class="container mx-auto px-4 py-16 min-h-screen">
+    <div class="container mx-auto px-4 py-12 min-h-screen">
+      <div class="flex items-center mb-12 justify-center">
+        <h3 id="productsTitle" class="font-semibold uppercase">My Cart</h3>
+      </div>
       <div class="cartBox flex gap-8">
         <table class="dataTable mb-8" cellspacing="0" cellpadding="10">
           <thead>
@@ -158,8 +182,84 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-200 py-6 text-center text-gray-600">
-      &copy; 2025 TechShop. All rights reserved.
+    <footer class="bg-background-dark text-white">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-8 py-8">
+          <div class="flex flex-col gap-2">
+            <div class="">
+              <a href="/" class="flex" title="ZapLet">
+                <!-- <i class="fa-solid fa-microchip text-blue-600"></i>  -->
+                <span class="text-[32px] leading-10 font-semibold font-oxanium"
+                  >Zap<span class="text-primary">Let</span></span
+                >
+                <!-- <img src="assets/img/logo.png" alt="ZapLet" /> -->
+              </a>
+            </div>
+            <h6 class="font-semibold">About the Company</h6>
+
+            <p class="text-sm text-neutral-300">
+              North India's No.1 Mobile Retail Chain — With 22 years of
+              excellence and over 75 stores across West Bengal, Odisha, and
+              Jharkhand, we've earned the trust of 5 crore+ loyal customers.
+            </p>
+          </div>
+          <div>
+            <h6 class="font-semibold">Our Categories</h6>
+            <ul class="mt-4 text-sm">
+              <li class="mb-2">
+                <a href="/products/?category=tablets">Ipad & Tablets</a>
+              </li>
+              <li class="mb-2">
+                <a href="/products/?category=smartphones">Smart Phones</a>
+              </li>
+              <li class="mb-2">
+                <a href="/products/?category=laptops">Laptops</a>
+              </li>
+              <li class="mb-2">
+                <a href="/products/?category=headphones">Headphones</a>
+              </li>
+              <li class="mb-2">
+                <a href="/products/?category=mobile-accessories">Accessories</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h6 class="font-semibold">Information</h6>
+            <ul class="mt-4 text-sm">
+              <li class="mb-2"><a href="#">About Us</a></li>
+              <li class="mb-2"><a href="#">Contact Us</a></li>
+              <li class="mb-2"><a href="#">FAQ</a></li>
+              <li class="mb-2"><a href="#">Terms & Conditions</a></li>
+              <li class="mb-2"><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div>
+            <h6 class="font-semibold">Stay updated with the latest Tech!</h6>
+            <p class="text-sm text-neutral-300 my-4">
+              Sign up for exclusive offers and the latest updates.
+            </p>
+            <form id="onSubscribe">
+              <div class="max-w-md mx-auto flex items-center justify-center relative">
+                
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  class="input !pr-[70px]"
+                  required
+                />
+                <button class="btn primary absolute right-0" id="subsBtn">
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </div>
+            </form>
+            <div id="subscribeMessage" class="mt-4 text-green-500 hidden"></div>
+          </div>
+        </div>
+
+        <div class="py-4 border-t border-neutral-500 text-center text-sm">
+          &copy; 2025 ZapLet. All rights reserved.
+        </div>
+      </div>
     </footer>
 
     <script type="module" src="cart.js"></script>

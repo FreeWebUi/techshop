@@ -85,7 +85,21 @@ function initPage() {
   const params = new URLSearchParams(window.location.search);
   const category = params.get("category");
   const products = getStoredProducts(category);
+  const productsTitle = document.querySelector("#productsTitle");
+  if (category == null || category == 'all') {
+    productsTitle.innerHTML = "All Products";
+  } else if (category == 'laptop') {
+    productsTitle.innerHTML = "Laptops";
+  } else if (category == 'mobile-accessories') {
+    productsTitle.innerHTML = "Accessories";
+  }else if (category == 'smartphones') {
+    productsTitle.innerHTML = "Mobiles";
+  }
+   else {
+    productsTitle.innerHTML = category;
+  }
   renderProducts(products);
 }
+
 
 initPage();

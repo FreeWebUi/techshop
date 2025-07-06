@@ -4,14 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TechShop Landing Page</title>
-    <link rel="stylesheet" href="../dist/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="../dist/output.css" />
   </head>
   <body>
-    <!-- 🔍 Search Modal -->
+    <!-- Search Modal -->
     <div
       id="searchModal"
       class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
@@ -44,9 +50,9 @@
       </div>
     </div>
 
-    <div class="topNav bg-blue-600  py-2 sticky">
+    <div class="topNav bg-background-dark py-2">
       <div class="container mx-auto px-4 text-center">
-        <p class="text-white text-sm">
+        <p class="text-white">
           Get up to 12 months of No Cost EMI on selected products with eligible
           cards. <a class="text-white underline" href="/products/">Shop</a>
         </p>
@@ -55,65 +61,68 @@
     <header class="bg-white shadow-md">
       <div class="container mx-auto px-4">
         <nav
-          class="flex flex-col md:flex-row justify-between items-center gap-4 py-4"
+          class="flex flex-col md:flex-row justify-between items-center gap-6 py-6"
         >
-          <!-- Left: Branding -->
-          <div class="flex flex-col md:flex-row items-center gap-4">
-            <div class="text-2xl font-bold text-black">
-              <a href="/" class="hover:text-gray-600">
-                <i class="fa-solid fa-microchip text-blue-600"></i> TechShop
+          <div class="flex flex-col md:flex-row items-center">
+            <div class="text-black">
+              <a href="/" class="flex" title="ZapLet">
+                <!-- <i class="fa-solid fa-microchip text-blue-600"></i>  -->
+                <span class="text-[32px] leading-10 font-semibold font-oxanium"
+                  >Zap<span class="text-primary">Let</span></span
+                >
+                <!-- <img src="assets/img/logo.png" alt="ZapLet" /> -->
               </a>
             </div>
           </div>
 
-          <!-- Center: Navigation + Search -->
           <div
-            class="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto"
+            class="flex flex-col md:flex-row items-center gap-8 w-full md:w-auto"
           >
-            <nav class="hidden md:flex space-x-6">
+            <nav class="hidden md:flex space-x-6 uppercase">
               <a
                 href="products/?category=all"
-                class="hover:text-gray-600 font-semibold"
+                class="hover:text-primary font-medium"
                 >All Product</a
               >
               <a
                 href="products/?category=smartphones"
-                class="hover:text-gray-600 font-semibold"
-                >Smartphones</a
+                class="hover:text-primary font-medium"
+                >Mobiles</a
               >
               <a
                 href="products/?category=laptops"
-                class="hover:text-gray-600 font-semibold"
+                class="hover:text-primary font-medium"
                 >Laptops</a
               >
               <a
                 href="products/?category=tablets"
-                class="hover:text-gray-600 font-semibold"
+                class="hover:text-primary font-medium"
                 >Tablets</a
               >
               <a
                 href="products/?category=mobile-accessories"
-                class="hover:text-gray-600 font-semibold"
+                class="hover:text-primary font-medium"
                 >Accessories</a
               >
             </nav>
           </div>
 
-          <!-- Right: Search + Cart + Mobile Menu Button -->
-          <div class="flex items-center gap-4 w-full md:w-auto">
-            <!-- 🔍 Search Bar -->
+          <div class="flex items-center gap-6 w-full md:w-auto">
             <button
               id="openSearchBtn"
-              class="text-gray-700 hover:text-blue-600 transition text-xl"
+              class="text-black hover:text-primary transition"
               aria-label="Open search"
             >
-              <i class="fa-solid fa-magnifying-glass"></i>
+              <i class="fa-solid fa-magnifying-glass text-2xl"></i>
             </button>
 
-            <!-- 🛒 Cart -->
-            <a href="/cart" class="hover:text-gray-600">
-              <i class="fa-solid fa-cart-shopping"></i>
-              <span id="cartQty" class="font-semibold">0</span>
+            <a href="/cart" class="hover:text-primary relative inline-block">
+              <i class="fa-solid fa-cart-shopping text-2xl"></i>
+              <span
+                id="cartQty"
+                class="font-medium absolute w-6 text-xs text-white left-1 top-1 z-10 text-center"
+                >0</span
+              >
             </a>
 
             <!-- 🍔 Hamburger (Mobile only) -->
@@ -138,157 +147,126 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-neutral-100 py-12 text-center">
-      <div class="container mx-auto px-4">
-        <!-- Heading -->
-        <!-- <h3 class="text-5xl md:text-6xl font-semibold text-gray-900 mb-4">
-          Tech That Inspires
-        </h3> -->
+    <section class="hero-banner text-center border-b">
+      <div class="w-full mx-auto">
+        <a href="/product/?id=82">
+          <img src="assets/img/home-banner1.jpg" class="w-full" alt="" />
+        </a>
 
-        <!-- Subheading -->
-        <p class="text-xl text-gray-600">
-          Experience the future with our latest collection of premium gadgets.
-        </p>
-
-        <!-- Hero Image -->
-        <div class="max-w-4xl mx-auto">
-          <img
-            src="assets/img/galaxy_tab_s10_ultra copy.jpg"
-            alt="Featured Product"
-            class="w-full h-auto mx-auto"
-          />
-        </div>
-
-        <!-- CTA Buttons -->
-        <div class="flex justify-center gap-4">
-          <a href="product/?id=160" class="btn primary"> Shop Now </a>
-          <!-- <a href="#learn-more" class="btn"> Learn More </a> -->
-        </div>
+        <!-- <img src="assets/img/hero-banner2.jpg" class="w-full" alt="" /> -->
       </div>
     </section>
 
     <!-- Shop by categories -->
-    <section class="py-16">
+    <section class="py-12">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">Shop By Categories</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <h3 class="text-2xl font-semibold text-center mb-12 uppercase">
+          Shop By Categories
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
           <!-- Product Card 1 -->
           <a href="products/?category=smartphones">
             <div
-              class="bg-whiteounded-lg shadow hover:shadow-lg transition rounded"
+              class="bg-white rounded-lg hover:shadow-lg transition border border-border"
             >
               <img
-                src="assets/img/cat-mobile.png"
+                src="assets/img/Mobiles.jpg"
                 alt="Product 1"
-                class="w-full rounded"
+                class="rounded-lg w-full"
               />
             </div>
-            <h5 class="font-semibold my-2 text-center">Smart Phone</h5>
+            <h5 class="font-medium my-3 text-center">Mobiles</h5>
           </a>
 
           <!-- Product Card 2 -->
-          <a href="products/?category=tablets">
-            <div
-              class="bg-white rounded-lg shadow hover:shadow-lg transition rounded"
-            >
-              <img
-                src="assets/img/cat-tablet.png"
-                alt="Product 2"
-                class="w-full rounded"
-              />
-            </div>
-            <h5 class="font-semibold my-2 text-center">Ipad & Tablet</h5>
-          </a>
-          <!-- Product Card 3 -->
           <a href="products/?category=laptops">
             <div
-              class="bg-white rounded-lg shadow hover:shadow-lg transition rounded"
+              class="bg-white rounded-lg hover:shadow-lg transition border border-border"
             >
               <img
-                src="assets/img/cat-laptop.png"
-                alt="Product 3"
-                class="w-full rounded"
+                src="assets/img/laptop.jpg"
+                alt="Product 1"
+                class="rounded-lg w-full"
               />
             </div>
-            <h5 class="font-semibold my-2 text-center">Laptop</h5>
+            <h5 class="font-medium my-3 text-center">Laptops</h5>
           </a>
+          <!-- Product Card 3 -->
+          <a href="products/?category=tablets">
+            <div
+              class="bg-white rounded-lg hover:shadow-lg transition border border-border"
+            >
+              <img
+                src="assets/img/tab.jpg"
+                alt="Product 1"
+                class="rounded-lg w-full"
+              />
+            </div>
+            <h5 class="font-medium my-3 text-center">Tablets</h5>
+          </a>
+
           <!-- Product Card 4 -->
           <a href="products/?category=mobile-accessories">
             <div
-              class="bg-white rounded-lg shadow hover:shadow-lg transition rounded"
+              class="bg-white rounded-lg hover:shadow-lg transition border border-border"
             >
               <img
-                src="assets/img/cat-access.png"
-                alt="Product 3"
-                class="w-full rounded"
+                src="assets/img/headphones.jpg"
+                alt="Product 1"
+                class="rounded-lg w-full"
               />
             </div>
-            <h5 class="font-semibold my-2 text-center">All Accessories</h5>
+            <h5 class="font-medium my-3 text-center">Headphones</h5>
+          </a>
+          <!-- Product Card 5 -->
+          <a href="products/?category=mobile-accessories">
+            <div
+              class="bg-white rounded-lg hover:shadow-lg transition border border-border"
+            >
+              <img
+                src="assets/img/airpods.webp"
+                alt="Product 1"
+                class="rounded-lg w-full"
+              />
+            </div>
+            <h5 class="font-medium my-3 text-center">Accessories</h5>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Product New Launch -->
-    <section class="py-16">
+    <section>
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">New Launch</h2>
-
-        <div class="grid grid-cols-2 gap-8">
-          <!-- Product Card 1 -->
-          <div class="card bg-neutral-100">
-            <div class="flex items-center">
-              <img
-                src="assets/img/iphone-13-pro.png"
-                alt="Product 1"
-                class="w-full rounded"
-              />
-              <div>
-                <h3 class="text-xl font-semibold mb-2">Iphone 13 Pro Max</h3>
-                <p class="text-gray-600 mb-6">
-                  Grab the lates Iphone 13 Pro Max with affordable price.
-                </p>
-                <a href="product/?id=123" class="btn primary">Order Now </a>
-              </div>
-            </div>
-          </div>
-          <!-- Product Card 2 -->
-          <div class="card bg-neutral-50 text-center">
-            <img
-              src="assets/img/amazon-echo.png"
-              alt="Product 2"
-              class="mb-4 rounded max-h-[260px] w-auto m-auto"
-            />
-            <h3 class="text-xl font-semibold mb-2">Amazon Echo</h3>
-            <p class="text-gray-600 mb-6">
-              Grab the new generation echo device made to luxuary.
-            </p>
-            <a href="product/?id=99" class="btn primary">Explore Collection</a>
-          </div>
-        </div>
+        <a href="product/?id=128" class="inline-block rounded-lg">
+          <img src="assets/img/focused-product.jpg" alt="" class="rounded-lg" />
+        </a>
       </div>
     </section>
 
     <!-- Product Best Seller -->
-    <section class="py-16">
+    <section class="py-12">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">Best Seller</h2>
+        <h3 class="text-2xl font-semibold text-center mb-12 uppercase">
+          TRENDING PRODUCTS
+        </h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           <!-- Product Card 1 -->
           <a href="product/?id=106">
             <div
               class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition text-center"
             >
-            <div class="flex justify-center rounded bg-neutral-50 p-4 mb-4">
-<img
-                src="https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/thumbnail.webp"
-                alt="Product 1"
-                class="w-full mb-4 rounded"
-              />
-            </div>
-              
+              <div class="flex justify-center rounded bg-neutral-50 p-4 mb-4">
+                <img
+                  src="https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/thumbnail.webp"
+                  alt="Product 1"
+                  class="w-full mb-4 rounded"
+                />
+              </div>
+
               <h5 class="font-semibold mb-2">Apple Watch Series 4 Gold</h5>
-            <p class="mb-2 text-yellow-500 text-lg">★★☆✩✩ <span class="text-gray-700 text-sm">(2.74)</span></p>
+              <p class="mb-2 text-yellow-500 text-lg">
+                ★★☆✩✩ <span class="text-gray-700 text-sm">(2.74)</span>
+              </p>
               <p class="text-gray-600">$349.99</p>
             </div>
           </a>
@@ -297,16 +275,18 @@
             <div
               class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition text-center"
             >
-            <div class="flex justify-center rounded bg-neutral-50 p-4 mb-4">
-<img
-                src="https://cdn.dummyjson.com/product-images/smartphones/vivo-s1/thumbnail.webp"
-                alt="Product 1"
-                class="w-full mb-4 rounded"
-              />
-            </div>
-              
+              <div class="flex justify-center rounded bg-neutral-50 p-4 mb-4">
+                <img
+                  src="https://cdn.dummyjson.com/product-images/smartphones/vivo-s1/thumbnail.webp"
+                  alt="Product 1"
+                  class="w-full mb-4 rounded"
+                />
+              </div>
+
               <h5 class="font-semibold mb-2">OVivo S1</h5>
-              <p class="mb-2 text-yellow-500 text-lg">★★★☆✩ <span class="text-gray-700 text-sm">(3.5)</span></p>
+              <p class="mb-2 text-yellow-500 text-lg">
+                ★★★☆✩ <span class="text-gray-700 text-sm">(3.5)</span>
+              </p>
               <p class="text-gray-600">$249.99</p>
             </div>
           </a>
@@ -316,16 +296,18 @@
             <div
               class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition text-center"
             >
-            <div class="flex justify-center rounded bg-neutral-50 p-4 mb-4">
-              <img
-                src="https://cdn.dummyjson.com/product-images/mobile-accessories/amazon-echo-plus/thumbnail.webp"
-                alt="Product 2"
-                class="w-full"
-              />
-            </div>
-              
+              <div class="flex justify-center rounded bg-neutral-50 p-4 mb-4">
+                <img
+                  src="https://cdn.dummyjson.com/product-images/mobile-accessories/amazon-echo-plus/thumbnail.webp"
+                  alt="Product 2"
+                  class="w-full"
+                />
+              </div>
+
               <h5 class="font-semibold mb-2">Echo Plus (2nd Gen)</h5>
-              <p class="mb-2 text-yellow-500 text-lg">★★★★☆ <span class="text-gray-700 text-sm">(4.99)</span></p>
+              <p class="mb-2 text-yellow-500 text-lg">
+                ★★★★☆ <span class="text-gray-700 text-sm">(4.99)</span>
+              </p>
               <p class="text-gray-600">$99.99</p>
             </div>
           </a>
@@ -333,16 +315,19 @@
           <a href="product/?id=101">
             <div
               class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition text-center"
-            ><div class="flex justify-center rounded bg-neutral-50 p-4 mb-4">
-<img
-                src="https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/thumbnail.webp"
-                alt="Product 3"
-                class="w-full"
-              />
-            </div>
-              
+            >
+              <div class="flex justify-center rounded bg-neutral-50 p-4 mb-4">
+                <img
+                  src="https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/thumbnail.webp"
+                  alt="Product 3"
+                  class="w-full"
+                />
+              </div>
+
               <h5 class="font-semibold mb-2">Apple AirPods Silver</h5>
-              <p class="mb-2 text-yellow-500 text-lg">★★★✩✩ <span class="text-gray-700 text-sm">(3.47)</span></p>
+              <p class="mb-2 text-yellow-500 text-lg">
+                ★★★✩✩ <span class="text-gray-700 text-sm">(3.47)</span>
+              </p>
               <p class="text-gray-600">$549.99</p>
             </div>
           </a>
@@ -350,28 +335,370 @@
       </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="bg-neutral-100 py-16">
-      <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold mb-4">
-          Stay updated with the latest Tech!
-        </h2>
-        <p class="mb-6">Sign up for exclusive offers and the latest updates.</p>
-
-        <form id="onSubscribe">
-          <div class="max-w-md mx-auto flex items-center justify-center">
-            <input type="email" placeholder="Enter your email" class="input" required />
-            <button class="btn primary ml-2 !rounded-md" id="subsBtn">Subscribe</button>
+    <!-- Product New Launch -->
+    <section class="py-4">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-2 gap-8">
+          <!-- Product Card 1 -->
+          <div
+            class="bg-white rounded-lg hover:shadow-lg transition border border-border"
+          >
+            <div class="flex items-center">
+              <a href="product/?id=99">
+                <img
+                  src="assets/img/feature-1.jpg"
+                  alt="Product 1"
+                  class="w-full rounded-lg"
+                />
+              </a>
+            </div>
           </div>
-        </form>
-        <div id="subscribeMessage" class="mt-4 text-green-500 hidden"></div>
+          <!-- Product Card 2 -->
+          <div
+            class="bg-white rounded-lg hover:shadow-lg transition border border-border"
+          >
+            <a href="product/?id=78">
+              <img
+                src="assets/img/feature-2.jpg"
+                alt="Product 2"
+                class="rounded-lg w-full"
+              />
+            </a>
+          </div>
+        </div>
       </div>
+    </section>
 
+    <!-- Product Best Seller -->
+    <section class="py-12">
+      <div class="container mx-auto px-4">
+        <h3 class="text-2xl font-semibold text-center mb-12 uppercase">
+          BEST SELLING PRODUCTS
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <!-- Product Card 1 -->
+          <a href="product/?id=106">
+            <div
+              class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition text-center"
+            >
+              <div class="flex justify-center rounded bg-neutral-50 p-4 mb-4">
+                <img
+                  src="https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/thumbnail.webp"
+                  alt="Product 1"
+                  class="w-full mb-4 rounded"
+                />
+              </div>
+
+              <h5 class="font-semibold mb-2">Apple Watch Series 4 Gold</h5>
+              <p class="mb-2 text-yellow-500 text-lg">
+                ★★☆✩✩ <span class="text-gray-700 text-sm">(2.74)</span>
+              </p>
+              <p class="text-gray-600">$349.99</p>
+            </div>
+          </a>
+          <!-- Product Card 2 -->
+          <a href="product/?id=134">
+            <div
+              class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition text-center"
+            >
+              <div class="flex justify-center rounded bg-neutral-50 p-4 mb-4">
+                <img
+                  src="https://cdn.dummyjson.com/product-images/smartphones/vivo-s1/thumbnail.webp"
+                  alt="Product 1"
+                  class="w-full mb-4 rounded"
+                />
+              </div>
+
+              <h5 class="font-semibold mb-2">OVivo S1</h5>
+              <p class="mb-2 text-yellow-500 text-lg">
+                ★★★☆✩ <span class="text-gray-700 text-sm">(3.5)</span>
+              </p>
+              <p class="text-gray-600">$249.99</p>
+            </div>
+          </a>
+
+          <!-- Product Card 3 -->
+          <a href="product/?id=99">
+            <div
+              class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition text-center"
+            >
+              <div class="flex justify-center rounded bg-neutral-50 p-4 mb-4">
+                <img
+                  src="https://cdn.dummyjson.com/product-images/mobile-accessories/amazon-echo-plus/thumbnail.webp"
+                  alt="Product 2"
+                  class="w-full"
+                />
+              </div>
+
+              <h5 class="font-semibold mb-2">Echo Plus (2nd Gen)</h5>
+              <p class="mb-2 text-yellow-500 text-lg">
+                ★★★★☆ <span class="text-gray-700 text-sm">(4.99)</span>
+              </p>
+              <p class="text-gray-600">$99.99</p>
+            </div>
+          </a>
+          <!-- Product Card 4 -->
+          <a href="product/?id=101">
+            <div
+              class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition text-center"
+            >
+              <div class="flex justify-center rounded bg-neutral-50 p-4 mb-4">
+                <img
+                  src="https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/thumbnail.webp"
+                  alt="Product 3"
+                  class="w-full"
+                />
+              </div>
+
+              <h5 class="font-semibold mb-2">Apple AirPods Silver</h5>
+              <p class="mb-2 text-yellow-500 text-lg">
+                ★★★✩✩ <span class="text-gray-700 text-sm">(3.47)</span>
+              </p>
+              <p class="text-gray-600">$549.99</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop by Brands -->
+    <section class="pb-12 pt-4">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-6 gap-8">
+          <!-- Product Card 1 -->
+
+          <div
+            class="bg-white rounded-full hover:shadow-lg transition border border-border flex justify-center"
+          >
+            <img
+              src="assets/img/Oppo.jpg"
+              alt="Product 1"
+              class="rounded-full h-24"
+            />
+          </div>
+          <div
+            class="bg-white rounded-full hover:shadow-lg transition border border-border flex justify-center"
+          >
+            <img
+              src="assets/img/Vivo.jpg"
+              alt="Product 1"
+              class="rounded-full h-24"
+            />
+          </div>
+          <div
+            class="bg-white rounded-full hover:shadow-lg transition border border-border flex justify-center"
+          >
+            <img
+              src="assets/img/Xiaomi.jpg"
+              alt="Product 1"
+              class="rounded-full h-24"
+            />
+          </div>
+          <div
+            class="bg-white rounded-full hover:shadow-lg transition border border-border flex justify-center"
+          >
+            <img
+              src="assets/img/Apple.jpg"
+              alt="Product 1"
+              class="rounded-full h-24"
+            />
+          </div>
+          <div
+            class="bg-white rounded-full hover:shadow-lg transition border border-border flex justify-center"
+          >
+            <img
+              src="assets/img/Samsung.jpg"
+              alt="Product 1"
+              class="rounded-full h-24"
+            />
+          </div>
+          <div
+            class="bg-white rounded-full hover:shadow-lg transition border border-border flex justify-center"
+          >
+            <img
+              src="assets/img/OnePlus.jpg"
+              alt="Product 1"
+              class="rounded-full h-24"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="bg-white py-12">
+      <div class="container mx-auto px-4">
+        <h5 class="text-xl font-medium mb-4">
+          Why Buy from ZapLet Digital Store?
+        </h5>
+
+        <p class="mb-4">
+          At ZapLet Digital Store, we believe in making your shopping experience
+          as smooth and satisfying as possible. That’s why we offer easy returns
+          and manufacturer-backed warranties — so even if you change your mind,
+          you're covered. Our fast and reliable delivery ensures your tech
+          arrives safely and on time, with real-time tracking for added peace of
+          mind. Whether you’re shopping for the latest smartphones, powerful
+          laptops, or immersive home audio systems, our wide range of carefully
+          curated products means you’ll always find something that fits your
+          needs.
+        </p>
+        <p class="mb-4">
+          What truly sets us apart is our commitment to customer care. Our
+          dedicated support team is here to help you at every step — from
+          choosing the right product to answering post-purchase queries. And
+          with our affordable pricing, you can rest assured you're getting great
+          value without hidden costs. At ZapLet, it’s not just about shopping;
+          it’s about providing a tech-buying experience you can trust.
+        </p>
+        <p class="mb-4">
+          We’re more than just a tech shop — we’re your trusted partner in
+          powering up your digital lifestyle. Here’s why thousands of customers
+          choose us:
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-8 pt-8">
+          <!-- Product Card 1 -->
+
+          <div
+            class="bg-background rounded-lg p-4 transition border border-border flex gap-2 flex-col items-center"
+          >
+            <img
+              src="assets/img/truck.png"
+              alt="Product 1"
+              class="rounded-lg w-12"
+            />
+            <div class="text-center">
+              <h6 class="font-semibold">Free Shipping</h6>
+              <p>We offer free shipping on all orders above ₹499.</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-background rounded-lg p-4 transition border border-border flex gap-2 flex-col items-center"
+          >
+            <img
+              src="assets/img/currency.png"
+              alt="Product 1"
+              class="rounded-lg w-12"
+            />
+            <div class="text-center">
+              <h6 class="font-semibold">Affordable Prices</h6>
+              <p>we offer competitive prices and no hidden fees</p>
+            </div>
+          </div>
+          <div
+            class="bg-background rounded-lg p-4 transition border border-border flex gap-2 flex-col items-center"
+          >
+            <img
+              src="assets/img/operator.png"
+              alt="Product 1"
+              class="rounded-lg w-12"
+            />
+            <div class="text-center">
+              <h6 class="font-semibold">Dedicated Support</h6>
+              <p>Our customer support team is always ready to assist</p>
+            </div>
+          </div>
+          <div
+            class="bg-background rounded-lg p-4 transition border border-border flex gap-2 flex-col items-center"
+          >
+            <img
+              src="assets/img/delivery.png"
+              alt="Product 1"
+              class="rounded-lg w-12"
+            />
+            <div class="text-center">
+              <h6 class="font-semibold">Door step Delivery</h6>
+              <p>
+                Your time matters. That’s why we ensure fast, doorstep delivery
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-200 py-6 text-center text-gray-600">
-      &copy; 2025 Tech. All rights reserved.
+    <footer class="bg-background-dark text-white">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-8 py-8">
+          <div class="flex flex-col gap-2">
+            <div class="">
+              <a href="/" class="flex" title="ZapLet">
+                <!-- <i class="fa-solid fa-microchip text-blue-600"></i>  -->
+                <span class="text-[32px] leading-10 font-semibold font-oxanium"
+                  >Zap<span class="text-primary">Let</span></span
+                >
+                <!-- <img src="assets/img/logo.png" alt="ZapLet" /> -->
+              </a>
+            </div>
+            <h6 class="font-semibold">About the Company</h6>
+
+            <p class="text-sm text-neutral-300">
+              North India's No.1 Mobile Retail Chain — With 22 years of
+              excellence and over 75 stores across West Bengal, Odisha, and
+              Jharkhand, we've earned the trust of 5 crore+ loyal customers.
+            </p>
+          </div>
+          <div>
+            <h6 class="font-semibold">Our Categories</h6>
+            <ul class="mt-4 text-sm">
+              <li class="mb-2">
+                <a href="/products/?category=tablets">Ipad & Tablets</a>
+              </li>
+              <li class="mb-2">
+                <a href="/products/?category=smartphones">Smart Phones</a>
+              </li>
+              <li class="mb-2">
+                <a href="/products/?category=laptops">Laptops</a>
+              </li>
+              <li class="mb-2">
+                <a href="/products/?category=headphones">Headphones</a>
+              </li>
+              <li class="mb-2">
+                <a href="/products/?category=mobile-accessories">Accessories</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h6 class="font-semibold">Information</h6>
+            <ul class="mt-4 text-sm">
+              <li class="mb-2"><a href="#">About Us</a></li>
+              <li class="mb-2"><a href="#">Contact Us</a></li>
+              <li class="mb-2"><a href="#">FAQ</a></li>
+              <li class="mb-2"><a href="#">Terms & Conditions</a></li>
+              <li class="mb-2"><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div>
+            <h6 class="font-semibold">Stay updated with the latest Tech!</h6>
+            <p class="text-sm text-neutral-300 my-4">
+              Sign up for exclusive offers and the latest updates.
+            </p>
+            <form id="onSubscribe">
+              <div
+                class="max-w-md mx-auto flex items-center justify-center relative"
+              >
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  class="input !pr-[70px]"
+                  required
+                />
+                <button class="btn primary absolute right-0" id="subsBtn">
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </div>
+            </form>
+            <div id="subscribeMessage" class="mt-4 text-green-500 hidden"></div>
+          </div>
+        </div>
+
+        <div class="py-4 border-t border-neutral-500 text-center text-sm">
+          &copy; 2025 ZapLet. All rights reserved.
+        </div>
+      </div>
     </footer>
     <!-- Scripts -->
     <script type="module" src="common/common.js"></script>

@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 /* Custom styles */
+
 body {
-  @apply bg-white text-gray-800 font-sans;
+  @apply bg-background text-black font-oxanium font-normal;
 }
 
 .btn {
@@ -16,7 +17,8 @@ body {
 }
 
 .input {
-  @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500;
+  @apply w-full px-4 py-2 border border-neutral-300 text-black rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500;
+
 }
 .card {
   @apply p-6 rounded-lg shadow-md border border-gray-100;
@@ -26,13 +28,13 @@ body {
   @apply text-blue-600;
 }
 .dataTable {
-  @apply w-full border border-gray-100;
+  @apply w-full border border-neutral-100;
 }
 .dataTable th {
-  @apply bg-neutral-200 border border-gray-300;
+  @apply bg-background-dark border text-white border-neutral-300;
 }
 .dataTable td {
-  @apply border border-gray-300;
+  @apply border border-neutral-300 bg-white;
 }
 
 .container-fluid {
@@ -51,19 +53,19 @@ h3 {
 }
 
 h4 {
-  @apply text-xl font-medium text-gray-700;
+  @apply text-xl font-medium text-gray-800;
 }
 
 p {
-  @apply text-base text-gray-600 leading-relaxed;
+  @apply text-base leading-relaxed;
 }
 
 small {
-  @apply text-sm text-gray-500;
+  @apply text-sm;
 }
 
 .list {
-  @apply list-disc list-inside text-gray-700 space-y-1;
+  @apply list-disc list-inside space-y-1;
 }
 
 .blink {
