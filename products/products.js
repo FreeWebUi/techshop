@@ -1,6 +1,6 @@
 
 // productPage.js
-import { updateCartQty } from "../common/uihelp.js";
+import { updateCartQty, showCartMessage } from "../common/uihelp.js";
 import { getStoredProducts } from "../common/dataService.js";
 
 const viewProducts = document.querySelector("#viewProducts");
@@ -76,6 +76,7 @@ function addToCart() {
 
       localStorage.setItem("cartData", JSON.stringify(cartData));
       updateCartQty();
+      showCartMessage();
     });
   });
 }

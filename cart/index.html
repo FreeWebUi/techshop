@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="../dist/output.css" />
   </head>
   <body>
-    <!-- Search Modal -->
+    
     <div
       id="searchModal"
       class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
@@ -52,7 +52,7 @@
 
     <div class="topNav bg-background-dark py-2">
       <div class="container mx-auto px-4 text-center">
-        <p class="text-white">
+        <p class="text-white text-sm lg:text-base">
           Get up to 12 months of No Cost EMI on selected products with eligible
           cards. <a class="text-white underline" href="/products/">Shop</a>
         </p>
@@ -60,9 +60,7 @@
     </div>
     <header class="bg-white shadow-md">
       <div class="container mx-auto px-4">
-        <nav
-          class="flex flex-col md:flex-row justify-between items-center gap-6 py-6"
-        >
+        <nav class="flex flex-row justify-between items-center gap-6 py-6">
           <div class="flex flex-col md:flex-row items-center">
             <div class="text-black">
               <a href="/" class="flex" title="ZapLet">
@@ -76,7 +74,7 @@
           </div>
 
           <div
-            class="flex flex-col md:flex-row items-center gap-8 w-full md:w-auto"
+            class="flex flex-col md:flex-row items-center gap-4 lg:gap-8 w-full md:w-auto"
           >
             <nav class="hidden md:flex space-x-6 uppercase">
               <a
@@ -107,7 +105,7 @@
             </nav>
           </div>
 
-          <div class="flex items-center gap-6 w-full md:w-auto">
+          <div class="flex items-center justify-end gap-6 w-full md:w-auto">
             <button
               id="openSearchBtn"
               class="text-black hover:text-primary transition"
@@ -125,10 +123,10 @@
               >
             </a>
 
-            <!-- 🍔 Hamburger (Mobile only) -->
-            <button class="md:hidden text-gray-800 focus:outline-none">
+            
+            <button id="mobileMenuBtn" class="md:hidden text-gray-800 focus:outline-none">
               <svg
-                class="w-6 h-6"
+                class="w-7 h-7"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -143,6 +141,42 @@
             </button>
           </div>
         </nav>
+        <!-- Mobile Menu -->
+        <div
+          id="mobileMenu"
+          class="md:hidden hidden bg-white pb-4 space-y-2 transition-all duration-300 ease-in-out"
+        >
+          <a
+            href="/products/?category=all"
+            class="block bg-gray-100 rounded-md px-4 py-2 text-base font-medium text-gray-800 hover:bg-primary hover:text-white transition"
+          >
+            All Products
+          </a>
+          <a
+            href="/products/?category=smartphones"
+            class="block bg-gray-100 rounded-md px-4 py-2 text-base font-medium text-gray-800 hover:bg-primary hover:text-white transition"
+          >
+            Mobiles
+          </a>
+          <a
+            href="/products/?category=laptops"
+            class="block bg-gray-100 rounded-md px-4 py-2 text-base font-medium text-gray-800 hover:bg-primary hover:text-white transition"
+          >
+            Laptops
+          </a>
+          <a
+            href="/products/?category=tablets"
+            class="block bg-gray-100 rounded-md px-4 py-2 text-base font-medium text-gray-800 hover:bg-primary hover:text-white transition"
+          >
+            Tablets
+          </a>
+          <a
+            href="/products/?category=mobile-accessories"
+            class="block bg-gray-100 rounded-md px-4 py-2 text-base font-medium text-gray-800 hover:bg-primary hover:text-white transition"
+          >
+            Accessories
+          </a>
+        </div>
       </div>
     </header>
 
@@ -150,41 +184,70 @@
       <div class="flex items-center mb-12 justify-center">
         <h3 id="productsTitle" class="font-semibold uppercase">My Cart</h3>
       </div>
-      <div class="cartBox flex gap-8">
-        <table class="dataTable mb-8" cellspacing="0" cellpadding="10">
-          <thead>
-            <tr>
-              <th width="80">#</th>
-              <th>Product</th>
-              <th width="160">Quantity</th>
-              <th width="200">Unit Price</th>
-              <th width="200">Sub Total</th>
-            </tr>
-          </thead>
-          <tbody id="cartBody"></tbody>
-          <tfoot>
-            <tr>
-              <td colspan="4" style="text-align: right">
-                <strong>Grand Total:</strong>
-              </td>
-              <td colspan="1" class="text-center">
-                <strong id="totalPrice">$10.00</strong>
-              </td>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
-      <div class="text-right">
-        <a class="btn primary !py-4" href="/checkout/"
-          >Proceed to Checkout</a
-        >
+      <div class="cartBody">
+        <div class="cartBox gap-8 mb-8">
+          <div class="overflow-x-auto">
+            <table
+              class="dataTable min-w-[768px]"
+              cellspacing="0"
+              cellpadding="10"
+            >
+              <thead>
+                <tr>
+                  <th width="80">#</th>
+                  <th>Product</th>
+                  <th width="160">Quantity</th>
+                  <th width="200">Unit Price</th>
+                  <th width="200">Sub Total</th>
+                </tr>
+              </thead>
+              <tbody id="cartBody">
+                
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="4" style="text-align: right">
+                    <strong>Grand Total:</strong>
+                  </td>
+                  <td colspan="1" class="text-center">
+                    <strong id="totalPrice">$0.00</strong>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+
+          <p
+            id="emptyMessage"
+            class="text-center text-gray-500 hidden bg-white p-4 border border-neutral-300 border-t-0"
+          >
+            Your cart is empty.
+          </p>
+        </div>
+
+        <div class="text-right space-x-4" id="cartActions">
+          <a
+            id="continueBtn"
+            class="btn secondary !py-4 hidden"
+            href="/products/"
+          >
+            Continue Shopping
+          </a>
+          <a
+            id="checkoutBtn"
+            class="btn primary !py-4 cursor-not-allowed opacity-50 pointer-events-none"
+            href="/checkout/"
+          >
+            Checkout Now
+          </a>
+        </div>
       </div>
     </div>
 
-    <!-- Footer -->
+    
     <footer class="bg-background-dark text-white">
       <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-8 py-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 py-8">
           <div class="flex flex-col gap-2">
             <div class="">
               <a href="/" class="flex" title="ZapLet">
@@ -239,15 +302,16 @@
               Sign up for exclusive offers and the latest updates.
             </p>
             <form id="onSubscribe">
-              <div class="max-w-md mx-auto flex items-center justify-center relative">
-                
+              <div
+                class="max-w-md mx-auto flex items-center justify-center relative"
+              >
                 <input
                   type="email"
                   placeholder="Enter your email"
                   class="input !pr-[70px]"
                   required
                 />
-                <button class="btn primary absolute right-0" id="subsBtn">
+                <button class="btn primary absolute right-0 !rounded-md" id="subsBtn">
                   <i class="fa-solid fa-paper-plane"></i>
                 </button>
               </div>

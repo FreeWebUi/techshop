@@ -61,12 +61,28 @@ export function setupSearchFunctionality() {
           <a href="/product/?id=${p.id}" class="flex flex-col items-center">
             <img src="${p.thumbnail}" class="w-24 h-24 object-cover rounded mb-2" />
             <h5 class="font-semibold">${p.title}</h5>
-            <p class="text-sm text-gray-600">₹${p.price}</p>
+            <p class="text-sm text-gray-600">$${p.price}</p>
           </a>
         </div>
       `).join("")
       : `<p class="text-gray-500 col-span-2">No products found.</p>`;
   });
+}
+
+export function showCartMessage(msg = "Item added to cart!") {
+  const messageBox = document.getElementById("cartMessage");
+  messageBox.textContent = msg;
+  messageBox.classList.remove("hidden");
+  messageBox.classList.add("opacity-100");
+
+  setTimeout(() => {
+    messageBox.classList.add("opacity-0");
+  }, 2000);
+
+  setTimeout(() => {
+    messageBox.classList.add("hidden");
+    messageBox.classList.remove("opacity-0");
+  }, 2500);
 }
 
 

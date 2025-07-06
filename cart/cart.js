@@ -19,10 +19,12 @@ function updateCart() {
     const td4 = document.createElement("td");
     td4.classList = "text-center";
     const img = document.createElement("img");
-    img.src = item.thumbnail || "https://dummyimage.com/64x64/f5f5f5/bfbfbf&text=TechShop";
+    img.src =
+      item.thumbnail ||
+      "https://dummyimage.com/64x64/f5f5f5/bfbfbf&text=TechShop";
     img.classList = "w-16 h-16 object-cover rounded";
     td0.appendChild(img);
-    
+
     td1.textContent = item.title;
 
     const qtyInput = document.createElement("input");
@@ -45,18 +47,18 @@ function updateCart() {
       const newQty = parseInt(qtyInput.value);
       if (newQty > 0) {
         item.qty = newQty;
-        item.subtotal = newQty * item.price;
+        item.subtotal = parseFloat((newQty * item.price).toFixed(2));
         localStorage.setItem("cartData", JSON.stringify(cartSummary));
 
-        updateCartQty(); // ✅ Update header cart qty
+        updateCartQty();
         updateCart(); // Refresh the cart display
       }
     });
 
     td2.appendChild(qtyInput);
-    td3.textContent = `$${item.price}`;
-    td4.textContent = `$${item.subtotal}`;
-tr.appendChild(td0);
+    td3.textContent = `$${item.price.toFixed(2)}`;
+    td4.textContent = `$${parseFloat(item.subtotal).toFixed(2)}`;
+    tr.appendChild(td0);
     tr.appendChild(td1);
     tr.appendChild(td2);
     tr.appendChild(td3);
@@ -68,6 +70,31 @@ tr.appendChild(td0);
   });
 
   allTotal.textContent = `$${totalPrice.toFixed(2)}`;
+}
+
+const checkoutBtn = document.querySelector("#checkoutBtn");
+const emptyMessage = document.querySelector("#emptyMessage");
+const continueBtn = document.querySelector("#continueBtn");
+
+if (cartSummary.length === 0) {
+  cartBody.innerHTML = `<tr><td colspan="5" class="text-center py-4 text-gray-500">No items in cart.</td></tr>`;
+  allTotal.textContent = "$0.00";
+
+  checkoutBtn.classList.add(
+    "cursor-not-allowed",
+    "opacity-50",
+    "pointer-events-none"
+  );
+  emptyMessage.classList.remove("hidden");
+  continueBtn.classList.remove("hidden");
+} else {
+  checkoutBtn.classList.remove(
+    "cursor-not-allowed",
+    "opacity-50",
+    "pointer-events-none"
+  );
+  emptyMessage.classList.add("hidden");
+  continueBtn.classList.add("hidden");
 }
 
 updateCart();

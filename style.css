@@ -9,11 +9,11 @@ body {
 }
 
 .btn {
-  @apply bg-gray-100 text-gray-800 px-6 py-2 rounded-md border hover:bg-gray-50;
+  @apply bg-white text-black px-6 py-2 rounded-full border border-primary hover:bg-primary hover:text-white uppercase;
 }
 
 .btn.primary {
-  @apply bg-blue-600 text-white hover:bg-blue-700;
+  @apply bg-blue-600 text-white hover:bg-white hover:text-primary;
 }
 
 .input {

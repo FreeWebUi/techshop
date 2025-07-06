@@ -30,5 +30,23 @@ subsBtn.addEventListener("click", (e) => {
   message.classList.remove("hidden");
 });
 
+// const menuToggle = document.querySelector("#mobileMenuBtn");
+//   const mobileMenu = document.getElementById('mobileMenu');
+
+//   menuToggle.addEventListener('click', () => {
+//     mobileMenu.classList.toggle('hidden');
+//   });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.querySelector("#mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    }
+  });
+
 
 
